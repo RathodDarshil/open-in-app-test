@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open YouTube Video</title>
+    <title>Open YouTube App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,27 +35,31 @@
 </head>
 <body>
     <div class="container">
-        <h1>Opening YouTube Video...</h1>
-        <p>If the video doesn't open automatically, click the button below:</p>
-        <a href="#" class="button" id="openYouTube">Open YouTube Video</a>
+        <h1>Opening YouTube App...</h1>
+        <p>If the app doesn't open automatically, click the button below:</p>
+        <a href="#" class="button" id="openApp">Open YouTube App</a>
     </div>
 
     <script>
-        // Replace this URL with the specific YouTube video or channel you want to open
-        const youtubeUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        function openYouTubeApp() {
+            // Attempt to open the YouTube app
+            window.location.href = 'youtube://';
 
-        function openYouTube() {
-            window.location.href = youtubeUrl;
+            // Fallback to the YouTube website after a short delay
+            setTimeout(function() {
+                window.location.href = 'https://www.youtube.com';
+            }, 2000);
         }
 
-        // Try to open YouTube immediately when the page loads
-        openYouTube();
+        // Try to open the app immediately when the page loads
+        openYouTubeApp();
 
         // Add click event listener to the button
-        document.getElementById('openYouTube').addEventListener('click', function(e) {
+        document.getElementById('openApp').addEventListener('click', function(e) {
             e.preventDefault();
-            openYouTube();
+            openYouTubeApp();
         });
     </script>
 </body>
 </html>
+
