@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open YouTube Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Opening YouTube Video...</h1>
+        <p>If the video doesn't open automatically, click the button below:</p>
+        <a href="#" class="button" id="openYouTube">Open YouTube Video</a>
+    </div>
+
+    <script>
+        // Replace this URL with the specific YouTube video or channel you want to open
+        const youtubeUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
+        function openYouTube() {
+            window.location.href = youtubeUrl;
+        }
+
+        // Try to open YouTube immediately when the page loads
+        openYouTube();
+
+        // Add click event listener to the button
+        document.getElementById('openYouTube').addEventListener('click', function(e) {
+            e.preventDefault();
+            openYouTube();
+        });
+    </script>
+</body>
+</html>
